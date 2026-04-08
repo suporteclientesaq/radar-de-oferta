@@ -7,10 +7,7 @@
 <meta name="description" content="Grupo gratuito com até 80% OFF todos os dias">
 
 <!-- UTMify -->
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  async defer
-></script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -23,107 +20,25 @@ align-items:center;
 justify-content:center;
 min-height:100vh;
 }
-
-.wrap{
-max-width:420px;
-width:100%;
-padding:24px 16px;
-text-align:center;
-}
-
-h1{
-font-size:2rem;
-font-weight:900;
-line-height:1.1;
-margin-bottom:10px;
-}
-
+.wrap{max-width:420px;width:100%;padding:24px 16px;text-align:center;}
+h1{font-size:2rem;font-weight:900;line-height:1.1;margin-bottom:10px;}
 .highlight{color:#FFD700;}
-
-.sub{
-font-size:.95rem;
-color:#ccc;
-margin-bottom:16px;
-}
-
-.badge{
-background:#FFD700;
-color:#000;
-font-weight:800;
-font-size:11px;
-padding:5px 14px;
-border-radius:20px;
-display:inline-block;
-margin-bottom:16px;
-}
-
-.stats{
-display:flex;
-justify-content:space-around;
-background:rgba(255,255,255,0.05);
-padding:12px;
-border-radius:10px;
-margin-bottom:10px;
-}
-
-.stat{
-font-size:1.2rem;
-font-weight:900;
-color:#FFD700;
-}
-
-.stat-label{
-font-size:10px;
-color:#888;
-}
-
-.proof{
-font-size:11px;
-color:#bbb;
-margin-bottom:16px;
-}
-
-.warning{
-font-size:12px;
-color:#aaa;
-margin-bottom:12px;
-}
-
-.cta{
-background:#25D366;
-color:#fff;
-padding:18px;
-border-radius:12px;
-font-size:1.1rem;
-font-weight:900;
-text-decoration:none;
-display:block;
-animation:pulse 2s infinite;
-}
-
+.sub{font-size:.95rem;color:#ccc;margin-bottom:16px;}
+.badge{background:#FFD700;color:#000;font-weight:800;font-size:11px;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px;}
+.stats{display:flex;justify-content:space-around;background:rgba(255,255,255,0.05);padding:12px;border-radius:10px;margin-bottom:10px;}
+.stat{font-size:1.2rem;font-weight:900;color:#FFD700;}
+.stat-label{font-size:10px;color:#888;}
+.proof{font-size:11px;color:#bbb;margin-bottom:16px;}
+.warning{font-size:12px;color:#aaa;margin-bottom:12px;}
+.cta{background:#25D366;color:#fff;padding:18px;border-radius:12px;font-size:1.1rem;font-weight:900;text-decoration:none;display:block;animation:pulse 2s infinite;}
 @keyframes pulse{
 0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
 70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
-
-.small{
-font-size:11px;
-color:#666;
-margin-top:8px;
-}
-
-.benefits{
-text-align:left;
-margin-top:18px;
-font-size:12px;
-color:#bbb;
-}
-
-.benefits div{
-margin-bottom:6px;
-}
-
+.small{font-size:11px;color:#666;margin-top:8px;}
+.benefits{text-align:left;margin-top:18px;font-size:12px;color:#bbb;}
+.benefits div{margin-bottom:6px;}
 </style>
 </head>
 <body>
@@ -158,11 +73,7 @@ margin-bottom:6px;
 Clique em <b>"Entrar no grupo"</b> na próxima tela
 </p>
 
-<a id="ctaBtn"
-href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7"
-target="_blank"
-class="cta"
-onclick="fbq('track','Lead');fbq('track','Contact');">
+<a id="ctaBtn" href="#" class="cta">
 🔥 QUERO ENTRAR AGORA (GRÁTIS)
 </a>
 
@@ -178,29 +89,43 @@ onclick="fbq('track','Lead');fbq('track','Contact');">
 </div>
 
 <script>
-// contador fake (prova social dinâmica)
+// contador dinâmico
 let c=1247;
 setInterval(()=>{
 if(Math.random()>0.6) c++;
 document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');
 },5000);
 
-// webhook utmify + segurança extra
-document.getElementById('ctaBtn').addEventListener('click',function(){
-try{
-fetch('https://api.utmify.com.br/api-credentials/pixels',{
-method:'POST',
-headers:{
-'Content-Type':'application/json',
-'x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'
-},
-body:JSON.stringify({
-event:'Lead',
-page_url:window.location.href,
-page_title:document.title
-})
-});
-}catch(e){}
+// CLICK COM DELAY (CORREÇÃO DO PIXEL)
+document.getElementById('ctaBtn').addEventListener('click', function(e){
+  e.preventDefault();
+
+  // Meta Pixel eventos
+  if(typeof fbq !== 'undefined'){
+    fbq('track','Lead');
+    fbq('track','Contact');
+  }
+
+  // UTMify webhook
+  try{
+    fetch('https://api.utmify.com.br/api-credentials/pixels',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'
+      },
+      body:JSON.stringify({
+        event:'Lead',
+        page_url:window.location.href,
+        page_title:document.title
+      })
+    });
+  }catch(e){}
+
+  // delay pra garantir envio
+  setTimeout(function(){
+    window.location.href = "https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7";
+  }, 300);
 });
 </script>
 
@@ -213,13 +138,12 @@ if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)
-}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init','994745922737322');
 fbq('track','PageView');
 
-// webhook pageview
+// webhook PageView
 try{
 fetch('https://api.utmify.com.br/api-credentials/pixels',{
 method:'POST',
