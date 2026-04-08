@@ -26,64 +26,41 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 .badge{display:inline-block;background:#FFD700;color:#000;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;margin-bottom:20px;}
 
-.stats{display:flex;justify-content:center;gap:20px;background:rgba(255,255,255,0.05);border-radius:12px;padding:12px;margin-bottom:20px;}
-
+.stats{display:flex;justify-content:center;gap:20px;background:rgba(255,255,255,0.05);border-radius:12px;padding:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.07);}
 .stat-n{display:block;font-size:1.4rem;font-weight:900;color:#FFD700;}
 .stat-l{font-size:10px;color:#888;}
 
 .urgency{background:#1a0000;border:1px solid #880000;border-radius:10px;padding:10px 14px;margin-bottom:20px;}
+.prog{height:6px;background:#330000;border-radius:3px;overflow:hidden;}
+.prog-fill{height:100%;width:73%;background:#ff3300;border-radius:3px;}
+.prog-label{font-size:10px;color:#555;margin-top:4px;display:block;}
 
-.cta-btn{display:block;background:#25D366;color:#fff;font-size:1.1rem;font-weight:900;padding:18px;border-radius:14px;text-decoration:none;animation:pulse 2s infinite;margin-bottom:12px;}
+.cta-btn{display:block;background:#25D366;color:#fff;font-size:1.1rem;font-weight:900;text-align:center;padding:18px;border-radius:14px;text-decoration:none;text-transform:uppercase;animation:pulse 2s infinite;letter-spacing:.3px;margin-bottom:12px;}
 
 .arrow{font-size:1.3rem;margin-bottom:8px;animation:bounce 1.5s infinite;}
 
 .sub{font-size:11px;color:#444;margin-bottom:24px;}
 
-.benefits{text-align:left;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;margin-bottom:20px;}
+.benefits{text-align:left;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.06);margin-bottom:20px;}
+.benefit{display:flex;align-items:center;gap:8px;font-size:12px;color:#bbb;margin-bottom:8px;}
 
-.benefit{display:flex;gap:8px;font-size:12px;color:#bbb;margin-bottom:8px;}
+.disclaimer{font-size:10px;color:#2a2a2a;line-height:1.5;}
 
-.disclaimer{font-size:10px;color:#2a2a2a;}
-
-<!-- POPUP -->
-<div id="popupSocial"></div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-
-const nomes = ["João","Maria","Lucas","Ana","Carlos","Juliana","Pedro","Fernanda"];
-const cidades = ["SP","RJ","BH","Recife","Fortaleza","Salvador"];
-
-function mostrarPopup(){
-  const nome = nomes[Math.floor(Math.random()*nomes.length)];
-  const cidade = cidades[Math.floor(Math.random()*cidades.length)];
-
-  const popup = document.getElementById("popupSocial");
-
-  popup.innerHTML = `💬 <b>${nome}</b> de ${cidade} entrou agora`;
-
-  popup.style.display = "block";
-  popup.style.opacity = "1";
-
-  setTimeout(()=>{
-    popup.style.opacity = "0";
-  },3000);
-
-  setTimeout(()=>{
-    popup.style.display = "none";
-  },3500);
-}
-
-// PRIMEIRA VEZ (GARANTE QUE APARECE)
-setTimeout(mostrarPopup, 2000);
-
-// LOOP
-setInterval(()=>{
-  mostrarPopup();
-},6000);
-
-});
-</script>
+/* POPUP */
+#popupSocial{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#111;
+color:#fff;
+padding:12px 14px;
+border-radius:10px;
+font-size:12px;
+display:none;
+z-index:999999;
+box-shadow:0 0 10px rgba(0,0,0,0.6);
+opacity:0;
+transition:opacity 0.3s ease;
 }
 </style>
 </head>
@@ -91,11 +68,11 @@ setInterval(()=>{
 
 <div class="wrap">
 
-<div class="live-pill"><div class="live-dot"></div> AO VIVO — RADAR ATIVADO</div>
+<div class="live-pill"><div class="live-dot"></div>&nbsp;AO VIVO — RADAR ATIVADO</div>
 
 <div class="logo-area">
 <h1>RADAR DE <em>OFERTA</em> 🔎</h1>
-<p>Achadinhos com até <strong>80% OFF</strong> — todo dia</p>
+<p>Achadinhos com até <strong style="color:#fff">80% OFF</strong> — todo dia</p>
 </div>
 
 <div class="badge">🎁 GRUPO 100% GRATUITO</div>
@@ -107,63 +84,83 @@ setInterval(()=>{
 </div>
 
 <div class="urgency">
-<p>⚠️ <strong>Vagas quase esgotadas!</strong></p>
+<p>⚠️ <strong>Vagas quase esgotadas!</strong> Não perca seu lugar</p>
+<div class="prog"><div class="prog-fill"></div></div>
+<span class="prog-label">73% das vagas já preenchidas</span>
 </div>
 
 <div class="arrow">👇</div>
 
-<a href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7" class="cta-btn" id="ctaBtn">
+<a href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7" target="_blank" class="cta-btn" id="ctaBtn">
 📲 ENTRAR NO GRUPO AGORA — GRÁTIS
 </a>
 
-<p class="sub">Você será redirecionado para o WhatsApp...</p>
+<p class="sub">Você será redirecionado para o WhatsApp • Gratuito pra sempre</p>
 
 <div class="benefits">
-<div class="benefit">🔥 Shopee, Amazon, Magalu e Mercado Livre</div>
-<div class="benefit">⚡ Ofertas 24h automáticas</div>
-<div class="benefit">💸 Até 80% OFF</div>
-<div class="benefit">🎁 100% gratuito</div>
+<div class="benefit"><span>🔥</span> Shopee, Amazon, Magalu e Mercado Livre</div>
+<div class="benefit"><span>⚡</span> Ofertas postadas 24h por dia automaticamente</div>
+<div class="benefit"><span>💸</span> Descontos reais de até 80% OFF</div>
+<div class="benefit"><span>🎁</span> 100% gratuito — sem taxa</div>
 </div>
+
+<p class="disclaimer">⚠️ As promoções dependem do estoque das lojas e podem acabar.</p>
 
 </div>
 
+<!-- POPUP -->
 <div id="popupSocial"></div>
 
 <script>
 // contador fake
 let c=1247;
-setInterval(()=>{if(Math.random()>.6)c++;document.getElementById('cnt').textContent=c;},6000);
+setInterval(()=>{
+ if(Math.random()>.6)c++;
+ document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');
+},6000);
 
-// popup social
-const nomes=["João","Maria","Lucas","Ana","Carlos","Juliana"];
-const cidades=["SP","RJ","BH","Recife","Fortaleza"];
+// popup
+(function(){
+function iniciar(){
+const nomes=["João","Maria","Lucas","Ana","Carlos","Juliana","Pedro","Fernanda"];
+const cidades=["SP","RJ","BH","Recife","Fortaleza","Salvador"];
 
-function popup(){
-let n=nomes[Math.floor(Math.random()*nomes.length)];
-let c=cidades[Math.floor(Math.random()*cidades.length)];
-let p=document.getElementById("popupSocial");
-p.innerHTML=`💬 <b>${n}</b> de ${c} entrou agora`;
-p.style.display="block";
-setTimeout(()=>{p.style.display="none"},3000);
+function mostrar(){
+let popup=document.getElementById("popupSocial");
+if(!popup) return;
+
+let nome=nomes[Math.floor(Math.random()*nomes.length)];
+let cidade=cidades[Math.floor(Math.random()*cidades.length)];
+
+popup.innerHTML="💬 <b>"+nome+"</b> de "+cidade+" entrou agora";
+popup.style.display="block";
+
+setTimeout(()=>{popup.style.opacity="1"},50);
+setTimeout(()=>{popup.style.opacity="0"},3000);
+setTimeout(()=>{popup.style.display="none"},3500);
 }
 
-setInterval(()=>{popup()},5000);
+setTimeout(mostrar,2000);
+setInterval(mostrar,6000);
+}
+
+if(document.readyState==="complete"){
+iniciar();
+}else{
+window.addEventListener("load",iniciar);
+}
+})();
 
 // clique CTA
 document.getElementById('ctaBtn').addEventListener('click',function(){
-
+if(typeof fbq!=='undefined'){
 fbq('track','Lead');
 fbq('track','Contact');
-
-fetch('https://api.utmify.com.br/api-credentials/pixels',{
-method:'POST',
-headers:{'Content-Type':'application/json','x-api-token':'SEU_TOKEN_AQUI'},
-body:JSON.stringify({event:'Lead',url:window.location.href})
-});
-
+}
 });
 </script>
 
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
