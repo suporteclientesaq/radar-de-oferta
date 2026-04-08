@@ -6,7 +6,14 @@
 <title>Radar de Oferta 🔎 — Grupo Grátis</title>
 <meta name="description" content="Grupo gratuito de ofertas com até 80% OFF todo dia!">
 
-<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- UTMify -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -22,15 +29,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 .logo-area{margin-bottom:16px;}
 .logo-area h1{font-size:2rem;font-weight:900;text-transform:uppercase;line-height:1.05;}
-.logo-area h1 em{color:#FFD700;}
+.logo-area h1 em{color:#FFD700;font-style:normal;}
+.logo-area p{font-size:.9rem;color:#aaa;margin-top:6px;}
 
-.badge{display:inline-block;background:#FFD700;color:#000;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;margin-bottom:20px;}
+.badge{display:inline-block;background:#FFD700;color:#000;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;text-transform:uppercase;margin-bottom:20px;}
 
 .stats{display:flex;justify-content:center;gap:20px;background:rgba(255,255,255,0.05);border-radius:12px;padding:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.07);}
 .stat-n{display:block;font-size:1.4rem;font-weight:900;color:#FFD700;}
-.stat-l{font-size:10px;color:#888;}
+.stat-l{font-size:10px;color:#888;text-transform:uppercase;}
 
 .urgency{background:#1a0000;border:1px solid #880000;border-radius:10px;padding:10px 14px;margin-bottom:20px;}
+.urgency p{font-size:12px;color:#ff7777;margin-bottom:6px;}
 .prog{height:6px;background:#330000;border-radius:3px;overflow:hidden;}
 .prog-fill{height:100%;width:73%;background:#ff3300;border-radius:3px;}
 .prog-label{font-size:10px;color:#555;margin-top:4px;display:block;}
@@ -43,166 +52,89 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 .benefits{text-align:left;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.06);margin-bottom:20px;}
 .benefit{display:flex;align-items:center;gap:8px;font-size:12px;color:#bbb;margin-bottom:8px;}
+.benefit:last-child{margin-bottom:0;}
+.benefit span{font-size:14px;}
 
 .disclaimer{font-size:10px;color:#2a2a2a;line-height:1.5;}
-
-/* POPUP */
-#popupSocial{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#111;
-color:#fff;
-padding:12px 14px;
-border-radius:10px;
-font-size:12px;
-display:none;
-z-index:999999;
-box-shadow:0 0 10px rgba(0,0,0,0.6);
-opacity:0;
-transition:opacity 0.3s ease;
-}
 </style>
 </head>
 <body>
 
 <div class="wrap">
 
-<div class="live-pill"><div class="live-dot"></div>&nbsp;AO VIVO — RADAR ATIVADO</div>
+  <div class="live-pill"><div class="live-dot"></div>&nbsp;AO VIVO — RADAR ATIVADO</div>
 
-<div class="logo-area">
-<h1>RADAR DE <em>OFERTA</em> 🔎</h1>
-<p>Achadinhos com até <strong style="color:#fff">80% OFF</strong> — todo dia</p>
+  <div class="logo-area">
+    <h1>RADAR DE <em>OFERTA</em> 🔎</h1>
+    <p>Achadinhos com até <strong style="color:#fff">80% OFF</strong> — todo dia</p>
+  </div>
+
+  <div class="badge">🎁 GRUPO 100% GRATUITO</div>
+
+  <div class="stats">
+    <div><span class="stat-n" id="cnt">1.247</span><span class="stat-l">no grupo</span></div>
+    <div><span class="stat-n">96</span><span class="stat-l">ofertas/dia</span></div>
+    <div><span class="stat-n">80%</span><span class="stat-l">max OFF</span></div>
+  </div>
+
+  <div class="urgency">
+    <p>⚠️ <strong>Vagas quase esgotadas!</strong> Não perca seu lugar</p>
+    <div class="prog"><div class="prog-fill"></div></div>
+    <span class="prog-label">73% das vagas já preenchidas</span>
+  </div>
+
+  <div class="arrow">👇</div>
+
+  <a href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7" class="cta-btn" id="ctaBtn">
+    📲 ENTRAR NO GRUPO AGORA — GRÁTIS
+  </a>
+
+  <p class="sub">Clique e entre direto pelo WhatsApp • Gratuito pra sempre</p>
+
+  <div class="benefits">
+    <div class="benefit"><span>🔥</span> Shopee, Amazon, Magalu e Mercado Livre</div>
+    <div class="benefit"><span>⚡</span> Ofertas postadas 24h por dia automaticamente</div>
+    <div class="benefit"><span>💸</span> Descontos reais de até 80% OFF</div>
+    <div class="benefit"><span>🎁</span> 100% gratuito — sem taxa, sem mensalidade</div>
+  </div>
+
+  <p class="disclaimer">⚠️ As promoções dependem do estoque das lojas e podem acabar a qualquer momento. Utilizamos links de afiliados.</p>
+
 </div>
-
-<div class="badge">🎁 GRUPO 100% GRATUITO</div>
-
-<div class="stats">
-<div><span class="stat-n" id="cnt">1.247</span><span class="stat-l">no grupo</span></div>
-<div><span class="stat-n">96</span><span class="stat-l">ofertas/dia</span></div>
-<div><span class="stat-n">80%</span><span class="stat-l">max OFF</span></div>
-</div>
-
-<div class="urgency">
-<p>⚠️ <strong>Vagas quase esgotadas!</strong> Não perca seu lugar</p>
-<div class="prog"><div class="prog-fill"></div></div>
-<span class="prog-label">73% das vagas já preenchidas</span>
-</div>
-
-<div class="arrow">👇</div>
-
-<a href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7" target="_blank" class="cta-btn" id="ctaBtn">
-📲 ENTRAR NO GRUPO AGORA — GRÁTIS
-</a>
-
-<p class="sub">Você será redirecionado para o WhatsApp • Gratuito pra sempre</p>
-
-<div class="benefits">
-<div class="benefit"><span>🔥</span> Shopee, Amazon, Magalu e Mercado Livre</div>
-<div class="benefit"><span>⚡</span> Ofertas postadas 24h por dia automaticamente</div>
-<div class="benefit"><span>💸</span> Descontos reais de até 80% OFF</div>
-<div class="benefit"><span>🎁</span> 100% gratuito — sem taxa</div>
-</div>
-
-<p class="disclaimer">⚠️ As promoções dependem do estoque das lojas e podem acabar.</p>
-
-</div>
-
-<!-- POPUP -->
-<div id="popupSocial"></div>
 
 <script>
-// contador fake
 let c=1247;
-setInterval(()=>{
- if(Math.random()>.6)c++;
- document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');
-},4000);
+setInterval(()=>{if(Math.random()>.6)c++;document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');},6000);
 
-// popup
-(function(){
-function iniciar(){
-const nomes=[
-"João Silva",
-"Maria Souza",
-"Lucas Oliveira",
-"Ana Santos",
-"Carlos Pereira",
-"Juliana Costa",
-"Pedro Rodrigues",
-"Fernanda Almeida",
-"Rafael Gomes",
-"Camila Martins",
-"Bruno Carvalho",
-"Larissa Ribeiro",
-"Diego Fernandes",
-"Patrícia Rocha",
-"Thiago Alves",
-"Amanda Barros",
-"Gustavo Freitas",
-"Beatriz Nunes",
-"Felipe Teixeira",
-"Vanessa Correia",
-"Eduardo Mendes",
-"Natália Batista",
-"Leonardo Cardoso",
-"Gabriela Duarte",
-"Ricardo Lopes",
-"Isabela Monteiro",
-"Marcelo Azevedo",
-"Carolina Farias",
-"André Pinto",
-"Letícia Campos"
-];
-const cidades=["SP","RJ","BH","Recife","Fortaleza","Salvador"];
-
-function mostrar(){
-let popup=document.getElementById("popupSocial");
-if(!popup) return;
-
-let nome=nomes[Math.floor(Math.random()*nomes.length)];
-let cidade=cidades[Math.floor(Math.random()*cidades.length)];
-
-popup.innerHTML="💬 <b>"+nome+"</b> de "+cidade+" entrou agora";
-popup.style.display="block";
-
-setTimeout(()=>{popup.style.opacity="1"},50);
-setTimeout(()=>{popup.style.opacity="0"},3000);
-setTimeout(()=>{popup.style.display="none"},3500);
-}
-
-setTimeout(mostrar,2000);
-setInterval(mostrar,6000);
-}
-
-if(document.readyState==="complete"){
-iniciar();
-}else{
-window.addEventListener("load",iniciar);
-}
-})();
-
-// clique CTA
 document.getElementById('ctaBtn').addEventListener('click',function(){
-if(typeof fbq!=='undefined'){
-fbq('track','Lead');
-fbq('track','Contact');
-}
+  if(typeof fbq!=='undefined'){
+    fbq('track','Lead');
+    fbq('track','Contact');
+  }
+  try{
+    fetch('https://api.utmify.com.br/api-credentials/pixels',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'},
+      body:JSON.stringify({event:'Lead',page_url:window.location.href,page_title:document.title})
+    });
+  }catch(e){}
 });
 </script>
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
+<!-- Meta Pixel (carregado por último) -->
+<script async>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','994745922737322');
 fbq('track','PageView');
+try{
+  fetch('https://api.utmify.com.br/api-credentials/pixels',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'},
+    body:JSON.stringify({event:'PageView',page_url:window.location.href,page_title:document.title})
+  });
+}catch(e){}
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=994745922737322&ev=PageView&noscript=1"/></noscript>
 
 </body>
 </html>
