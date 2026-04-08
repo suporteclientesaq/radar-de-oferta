@@ -6,6 +6,21 @@
 <title>Radar de Oferta 🔎 — Grupo Grátis</title>
 <meta name="description" content="Grupo gratuito com até 80% OFF todos os dias">
 
+<!-- META PIXEL (AGORA NO LUGAR CERTO) -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','994745922737322');
+fbq('track','PageView');
+</script>
+
 <!-- UTMify -->
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
 
@@ -45,13 +60,6 @@ background:rgba(255,255,255,0.03);
 box-shadow:0 0 25px rgba(255,215,0,0.15),
             0 0 60px rgba(255,165,0,0.08);
 animation:float 3s ease-in-out infinite;
-transition:0.3s;
-}
-
-.logo-box img:hover{
-transform:scale(1.05);
-box-shadow:0 0 35px rgba(255,215,0,0.25),
-            0 0 80px rgba(255,165,0,0.15);
 }
 
 @keyframes float{
@@ -153,6 +161,7 @@ margin-bottom:6px;
 }
 </style>
 </head>
+
 <body>
 
 <div class="wrap">
@@ -213,7 +222,7 @@ if(Math.random()>0.6) c++;
 document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');
 },5000);
 
-// CLICK COM DELAY (TRACKING PERFEITO)
+// CLICK COM DELAY (AGORA FUNCIONA)
 document.getElementById('ctaBtn').addEventListener('click', function(e){
   e.preventDefault();
 
@@ -222,61 +231,11 @@ document.getElementById('ctaBtn').addEventListener('click', function(e){
     fbq('track','Contact');
   }
 
-  try{
-    fetch('https://api.utmify.com.br/api-credentials/pixels',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'
-      },
-      body:JSON.stringify({
-        event:'Lead',
-        page_url:window.location.href,
-        page_title:document.title
-      })
-    });
-  }catch(e){}
-
   setTimeout(function(){
     window.location.href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7";
-  },300);
+  },500);
 });
 </script>
-
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init','994745922737322');
-fbq('track','PageView');
-
-try{
-fetch('https://api.utmify.com.br/api-credentials/pixels',{
-method:'POST',
-headers:{
-'Content-Type':'application/json',
-'x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'
-},
-body:JSON.stringify({
-event:'PageView',
-page_url:window.location.href,
-page_title:document.title
-})
-});
-}catch(e){}
-</script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=994745922737322&ev=PageView&noscript=1"/>
-</noscript>
 
 </body>
 </html>
