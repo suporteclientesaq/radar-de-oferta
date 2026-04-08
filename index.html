@@ -117,12 +117,43 @@ let c=1247;
 setInterval(()=>{
  if(Math.random()>.6)c++;
  document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');
-},6000);
+},4000);
 
 // popup
 (function(){
 function iniciar(){
-const nomes=["João","Maria","Lucas","Ana","Carlos","Juliana","Pedro","Fernanda"];
+const nomes=[
+"João Silva",
+"Maria Souza",
+"Lucas Oliveira",
+"Ana Santos",
+"Carlos Pereira",
+"Juliana Costa",
+"Pedro Rodrigues",
+"Fernanda Almeida",
+"Rafael Gomes",
+"Camila Martins",
+"Bruno Carvalho",
+"Larissa Ribeiro",
+"Diego Fernandes",
+"Patrícia Rocha",
+"Thiago Alves",
+"Amanda Barros",
+"Gustavo Freitas",
+"Beatriz Nunes",
+"Felipe Teixeira",
+"Vanessa Correia",
+"Eduardo Mendes",
+"Natália Batista",
+"Leonardo Cardoso",
+"Gabriela Duarte",
+"Ricardo Lopes",
+"Isabela Monteiro",
+"Marcelo Azevedo",
+"Carolina Farias",
+"André Pinto",
+"Letícia Campos"
+];
 const cidades=["SP","RJ","BH","Recife","Fortaleza","Salvador"];
 
 function mostrar(){
