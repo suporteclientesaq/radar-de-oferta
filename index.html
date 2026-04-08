@@ -4,137 +4,242 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radar de Oferta 🔎 — Grupo Grátis</title>
-<meta name="description" content="Grupo gratuito de ofertas com até 80% OFF todo dia!">
+<meta name="description" content="Grupo gratuito com até 80% OFF todos os dias">
 
 <!-- UTMify -->
 <script
   src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
+  async defer
 ></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.6)}50%{box-shadow:0 0 0 16px rgba(37,211,102,0)}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+body{
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+}
 
-.wrap{width:100%;max-width:420px;padding:24px 16px;text-align:center;}
+.wrap{
+max-width:420px;
+width:100%;
+padding:24px 16px;
+text-align:center;
+}
 
-.live-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:4px 14px;border-radius:20px;font-size:11px;margin-bottom:16px;}
-.live-dot{width:7px;height:7px;background:#ff4444;border-radius:50%;animation:blink 1s infinite;}
+h1{
+font-size:2rem;
+font-weight:900;
+line-height:1.1;
+margin-bottom:10px;
+}
 
-.logo-area{margin-bottom:16px;}
-.logo-area h1{font-size:2rem;font-weight:900;text-transform:uppercase;line-height:1.05;}
-.logo-area h1 em{color:#FFD700;font-style:normal;}
-.logo-area p{font-size:.9rem;color:#aaa;margin-top:6px;}
+.highlight{color:#FFD700;}
 
-.badge{display:inline-block;background:#FFD700;color:#000;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;text-transform:uppercase;margin-bottom:20px;}
+.sub{
+font-size:.95rem;
+color:#ccc;
+margin-bottom:16px;
+}
 
-.stats{display:flex;justify-content:center;gap:20px;background:rgba(255,255,255,0.05);border-radius:12px;padding:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.07);}
-.stat-n{display:block;font-size:1.4rem;font-weight:900;color:#FFD700;}
-.stat-l{font-size:10px;color:#888;text-transform:uppercase;}
+.badge{
+background:#FFD700;
+color:#000;
+font-weight:800;
+font-size:11px;
+padding:5px 14px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:16px;
+}
 
-.urgency{background:#1a0000;border:1px solid #880000;border-radius:10px;padding:10px 14px;margin-bottom:20px;}
-.urgency p{font-size:12px;color:#ff7777;margin-bottom:6px;}
-.prog{height:6px;background:#330000;border-radius:3px;overflow:hidden;}
-.prog-fill{height:100%;width:73%;background:#ff3300;border-radius:3px;}
-.prog-label{font-size:10px;color:#555;margin-top:4px;display:block;}
+.stats{
+display:flex;
+justify-content:space-around;
+background:rgba(255,255,255,0.05);
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+}
 
-.cta-btn{display:block;background:#25D366;color:#fff;font-size:1.1rem;font-weight:900;text-align:center;padding:18px;border-radius:14px;text-decoration:none;text-transform:uppercase;animation:pulse 2s infinite;letter-spacing:.3px;margin-bottom:12px;}
+.stat{
+font-size:1.2rem;
+font-weight:900;
+color:#FFD700;
+}
 
-.arrow{font-size:1.3rem;margin-bottom:8px;animation:bounce 1.5s infinite;}
+.stat-label{
+font-size:10px;
+color:#888;
+}
 
-.sub{font-size:11px;color:#444;margin-bottom:24px;}
+.proof{
+font-size:11px;
+color:#bbb;
+margin-bottom:16px;
+}
 
-.benefits{text-align:left;background:rgba(255,255,255,0.04);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.06);margin-bottom:20px;}
-.benefit{display:flex;align-items:center;gap:8px;font-size:12px;color:#bbb;margin-bottom:8px;}
-.benefit:last-child{margin-bottom:0;}
-.benefit span{font-size:14px;}
+.warning{
+font-size:12px;
+color:#aaa;
+margin-bottom:12px;
+}
 
-.disclaimer{font-size:10px;color:#2a2a2a;line-height:1.5;}
+.cta{
+background:#25D366;
+color:#fff;
+padding:18px;
+border-radius:12px;
+font-size:1.1rem;
+font-weight:900;
+text-decoration:none;
+display:block;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+.small{
+font-size:11px;
+color:#666;
+margin-top:8px;
+}
+
+.benefits{
+text-align:left;
+margin-top:18px;
+font-size:12px;
+color:#bbb;
+}
+
+.benefits div{
+margin-bottom:6px;
+}
+
 </style>
 </head>
 <body>
 
 <div class="wrap">
 
-  <div class="live-pill"><div class="live-dot"></div>&nbsp;AO VIVO — RADAR ATIVADO</div>
+<h1>🚨 ATÉ <span class="highlight">80% OFF</span><br> TODOS OS DIAS</h1>
 
-  <div class="logo-area">
-    <h1>RADAR DE <em>OFERTA</em> 🔎</h1>
-    <p>Achadinhos com até <strong style="color:#fff">80% OFF</strong> — todo dia</p>
-  </div>
+<p class="sub">Ofertas da Shopee, Amazon e Mercado Livre direto no WhatsApp</p>
 
-  <div class="badge">🎁 GRUPO 100% GRATUITO</div>
+<div class="badge">GRUPO 100% GRATUITO</div>
 
-  <div class="stats">
-    <div><span class="stat-n" id="cnt">1.247</span><span class="stat-l">no grupo</span></div>
-    <div><span class="stat-n">96</span><span class="stat-l">ofertas/dia</span></div>
-    <div><span class="stat-n">80%</span><span class="stat-l">max OFF</span></div>
-  </div>
+<div class="stats">
+<div>
+<div class="stat" id="cnt">1.247</div>
+<div class="stat-label">pessoas</div>
+</div>
+<div>
+<div class="stat">96</div>
+<div class="stat-label">ofertas/dia</div>
+</div>
+<div>
+<div class="stat">80%</div>
+<div class="stat-label">OFF</div>
+</div>
+</div>
 
-  <div class="urgency">
-    <p>⚠️ <strong>Vagas quase esgotadas!</strong> Não perca seu lugar</p>
-    <div class="prog"><div class="prog-fill"></div></div>
-    <span class="prog-label">73% das vagas já preenchidas</span>
-  </div>
+<p class="proof">+1.200 pessoas já estão economizando todos os dias</p>
 
-  <div class="arrow">👇</div>
+<p class="warning">
+⚠️ Você será redirecionado para o WhatsApp<br>
+Clique em <b>"Entrar no grupo"</b> na próxima tela
+</p>
 
-  <a href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7" class="cta-btn" id="ctaBtn">
-    📲 ENTRAR NO GRUPO AGORA — GRÁTIS
-  </a>
+<a id="ctaBtn"
+href="https://chat.whatsapp.com/FB6kuXWUFRp7aK98OkY9L7"
+target="_blank"
+class="cta"
+onclick="fbq('track','Lead');fbq('track','Contact');">
+🔥 QUERO ENTRAR AGORA (GRÁTIS)
+</a>
 
-  <p class="sub">Clique e entre direto pelo WhatsApp • Gratuito pra sempre</p>
+<p class="small">⏱️ Leva menos de 10 segundos</p>
 
-  <div class="benefits">
-    <div class="benefit"><span>🔥</span> Shopee, Amazon, Magalu e Mercado Livre</div>
-    <div class="benefit"><span>⚡</span> Ofertas postadas 24h por dia automaticamente</div>
-    <div class="benefit"><span>💸</span> Descontos reais de até 80% OFF</div>
-    <div class="benefit"><span>🎁</span> 100% gratuito — sem taxa, sem mensalidade</div>
-  </div>
-
-  <p class="disclaimer">⚠️ As promoções dependem do estoque das lojas e podem acabar a qualquer momento. Utilizamos links de afiliados.</p>
+<div class="benefits">
+<div>🔥 Shopee, Amazon e mais</div>
+<div>⚡ Atualizado 24h</div>
+<div>💸 Descontos reais</div>
+<div>🎁 Totalmente grátis</div>
+</div>
 
 </div>
 
 <script>
+// contador fake (prova social dinâmica)
 let c=1247;
-setInterval(()=>{if(Math.random()>.6)c++;document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');},6000);
+setInterval(()=>{
+if(Math.random()>0.6) c++;
+document.getElementById('cnt').textContent=c.toLocaleString('pt-BR');
+},5000);
 
+// webhook utmify + segurança extra
 document.getElementById('ctaBtn').addEventListener('click',function(){
-  if(typeof fbq!=='undefined'){
-    fbq('track','Lead');
-    fbq('track','Contact');
-  }
-  try{
-    fetch('https://api.utmify.com.br/api-credentials/pixels',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'},
-      body:JSON.stringify({event:'Lead',page_url:window.location.href,page_title:document.title})
-    });
-  }catch(e){}
+try{
+fetch('https://api.utmify.com.br/api-credentials/pixels',{
+method:'POST',
+headers:{
+'Content-Type':'application/json',
+'x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'
+},
+body:JSON.stringify({
+event:'Lead',
+page_url:window.location.href,
+page_title:document.title
+})
+});
+}catch(e){}
 });
 </script>
 
-<!-- Meta Pixel (carregado por último) -->
-<script async>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init','994745922737322');
 fbq('track','PageView');
+
+// webhook pageview
 try{
-  fetch('https://api.utmify.com.br/api-credentials/pixels',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'},
-    body:JSON.stringify({event:'PageView',page_url:window.location.href,page_title:document.title})
-  });
+fetch('https://api.utmify.com.br/api-credentials/pixels',{
+method:'POST',
+headers:{
+'Content-Type':'application/json',
+'x-api-token':'OF6MZnwUnCJqczaBJCpanJX6EGPAEA7V408P'
+},
+body:JSON.stringify({
+event:'PageView',
+page_url:window.location.href,
+page_title:document.title
+})
+});
 }catch(e){}
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=994745922737322&ev=PageView&noscript=1"/></noscript>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=994745922737322&ev=PageView&noscript=1"/>
+</noscript>
 
 </body>
 </html>
